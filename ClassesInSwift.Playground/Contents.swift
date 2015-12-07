@@ -13,9 +13,9 @@ class SimpleClass
     
     init()
     {
-        name = String()
-        age = -99
-        isTired = true
+        self.name = String()
+        self.age = -99
+        self.isTired = true
     }
     
     convenience init(name : String)
@@ -23,7 +23,17 @@ class SimpleClass
         self.init()
         self.name = name
     }
+    
+    convenience init(name : String, age : Int)
+    {
+        self.init()
+        self.name = name
+        self.age = age
+    }
 }
 var someInstance = SimpleClass()
 print(someInstance.name)
 var otherInstance = SimpleClass(name: "derf")
+print(otherInstance.name)
+var convenienceInstance = SimpleClass(name: "other", age: 4567)
+print(convenienceInstance.age)
